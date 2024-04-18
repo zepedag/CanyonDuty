@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CanyonDuty
 {
-    internal class VObstacle
+    public class VObstacle
     {
         public List<List<VPoint>> grid;
         private List<VPole> poles;

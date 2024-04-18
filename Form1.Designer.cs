@@ -40,7 +40,7 @@
             // TIMER
             // 
             TIMER.Enabled = true;
-            TIMER.Interval = 30;
+            TIMER.Interval = 60;
             TIMER.Tick += TIMER_Tick;
             // 
             // label2

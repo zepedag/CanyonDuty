@@ -21,6 +21,7 @@ namespace CanyonDuty
         Bitmap layer0, layer1, layer2, layer00;
         int l0_X1, l0_X2, l0_X3, l0_X4, l1_X1, l1_X2, l2_X1;
         static Graphics g;
+        List<VObstacle> obstacles;
 
         public Form1()
         {
@@ -95,17 +96,7 @@ namespace CanyonDuty
 
         private void PCT_CANVAS_Paint(object sender, PaintEventArgs e)
         {
-            // Change the direction of the speed when any point of the obstacle reaches the edges of the screen
-            /*if (obstacle.IsAtEdge(PCT_CANVAS.Height))
-            {
-                obstacle.Speed = -obstacle.Speed;
-            }*/
-
-            // Update the obstacle's position
-            //obstacle.UpdatePosition();
-
-            // Redraw the PictureBox
-            // Clear the canvas
+ 
             canvas.FastClear();
 
 
@@ -164,19 +155,6 @@ namespace CanyonDuty
         {
             // Get the position of the mouse click
             Point clickPosition = e.Location;
-
-            // Calculate the angle to the click position for each tank
-            //float angle1 = CalculateAngle(tank1.Position, clickPosition);
-            //float angle2 = CalculateAngle(tank2.Position, clickPosition);
-
-            // Set the cannon angle for each tank
-            //tank1.CannonAngle = angle1;
-            //tank2.CannonAngle = angle2;
-
-            // Make the tanks shoot
-            //tank1.Shoot();
-            //tank2.Shoot();
-
         }
 
         private float CalculateAngle(Vec2 tankPosition, Point clickPosition)
@@ -353,48 +331,61 @@ namespace CanyonDuty
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-                // Velocidad de movimiento de los tanques
-                int speed = 5;
+            // Velocidad de movimiento de los tanques
+            int speed = 5;
 
-                switch (e.KeyCode)
-                {
+            // Tamaño del tanque
+            int tankWidth = 70; // Asegúrate de que este valor sea el correcto
+            int tankHeight = 70; // Asegúrate de que este valor sea el correcto
+
+            switch (e.KeyCode)
+            {
                 case Keys.A:
-                    // Mover el tanque1 a la izquierda
-                    tank1.Position.X -= speed;
+                    // Mover el tanque1 a la izquierda si no está en el borde izquierdo
+                    if (tank1.Position.X - speed >= tankWidth / 2)
+                        tank1.Position.X -= speed;
                     break;
                 case Keys.D:
-                    // Mover el tanque1 a la derecha
-                    tank1.Position.X += speed;
+                    // Mover el tanque1 a la derecha si no está en el borde derecho
+                    if (tank1.Position.X + speed <= PCT_CANVAS.Width - tankWidth / 2)
+                        tank1.Position.X += speed;
                     break;
                 case Keys.W:
-                    // Mover el tanque1 hacia arriba
-                    tank1.Position.Y -= speed;
+                    // Mover el tanque1 hacia arriba si no está en el borde superior
+                    if (tank1.Position.Y - speed >= tankHeight / 2)
+                        tank1.Position.Y -= speed;
                     break;
                 case Keys.S:
-                    // Mover el tanque1 hacia abajo
-                    tank1.Position.Y += speed;
+                    // Mover el tanque1 hacia abajo si no está en el borde inferior
+                    if (tank1.Position.Y + speed <= PCT_CANVAS.Height - tankHeight / 2)
+                        tank1.Position.Y += speed;
                     break;
                 case Keys.Left:
-                    // Mover el tanque2 a la izquierda
-                    tank2.Position.X -= speed;
+                    // Mover el tanque2 a la izquierda si no está en el borde izquierdo
+                    if (tank2.Position.X - speed >= tankWidth / 2)
+                        tank2.Position.X -= speed;
                     break;
                 case Keys.Right:
-                    // Mover el tanque2 a la derecha
-                    tank2.Position.X += speed;
+                    // Mover el tanque2 a la derecha si no está en el borde derecho
+                    if (tank2.Position.X + speed <= PCT_CANVAS.Width - tankWidth / 2)
+                        tank2.Position.X += speed;
                     break;
                 case Keys.Up:
-                    // Mover el tanque2 hacia arriba
-                    tank2.Position.Y -= speed;
+                    // Mover el tanque2 hacia arriba si no está en el borde superior
+                    if (tank2.Position.Y - speed >= tankHeight / 2)
+                        tank2.Position.Y -= speed;
                     break;
                 case Keys.Down:
-                    // Mover el tanque2 hacia abajo
-                    tank2.Position.Y += speed;
+                    // Mover el tanque2 hacia abajo si no está en el borde inferior
+                    if (tank2.Position.Y + speed <= PCT_CANVAS.Height - tankHeight / 2)
+                        tank2.Position.Y += speed;
                     break;
             }
 
             // Redibujar el PictureBox
             PCT_CANVAS.Invalidate();
-
         }
+
+
     }
 }

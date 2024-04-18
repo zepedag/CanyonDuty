@@ -22,6 +22,7 @@ namespace CanyonDuty
         public Brush brush;
         internal bool isActive;
         internal bool isBullet;
+        public int UpdatesSinceShot { get; set; }
 
         public void Move()
         {

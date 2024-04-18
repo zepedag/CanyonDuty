@@ -66,11 +66,19 @@ namespace CanyonDuty
                                 p2.Pos += res;
                     }
                 }
+                foreach (VPoint point in pts)
+                {
+                    if (point.isBullet)
+                    {
+                        // Incrementa UpdatesSinceShot para la bala
+                        point.UpdatesSinceShot++;
+                    }
+                }
                 /*
                 if (isMouseDown)// para seleccionar el punto de masa a mover escogiendo su ID 
                     if (Math.Abs((p1.X - mouse.X) * (p1.X - mouse.X) + (p1.Y - mouse.Y) * (p1.Y - mouse.Y)) <= p1.Radius * p1.Radius)
                         id = p1.Id;*/
-                if(p1.isActive && !p1.isWall && !p1.isBullet)
+                if (p1.isActive && !p1.isWall && !p1.isBullet)
                     p1.Render(g, Width, Height);
             }
             
@@ -90,12 +98,15 @@ namespace CanyonDuty
                 if (!pts[i].isBullet) // Si el objeto no es una bala, ignóralo
                     continue;
 
-                // Comprueba si la bala está dentro del cuadro delimitador del tanque
-                if (pts[i].X >= tank.Position.X - hitboxSize && pts[i].X <= tank.Position.X + 30 + hitboxSize &&
-                    pts[i].Y >= tank.Position.Y - hitboxSize && pts[i].Y <= tank.Position.Y + 30 + hitboxSize)
+                // Sólo verifica la colisión si han pasado al menos 1 actualizaciones desde que se disparó la bala
+                if (pts[i].UpdatesSinceShot > 1)
                 {
-                    tank.life--; // Reduce la vida del tanque
-                    return true;
+                    if (pts[i].X >= tank.Position.X - hitboxSize && pts[i].X <= tank.Position.X + 30 + hitboxSize &&
+                    pts[i].Y >= tank.Position.Y - hitboxSize && pts[i].Y <= tank.Position.Y + 30 + hitboxSize)
+                    {
+                        tank.life--; // Reduce la vida del tanque
+                        return true;
+                    }
                 }
             }
 

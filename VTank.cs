@@ -17,10 +17,11 @@ namespace CanyonDuty
         public Vec2 ShotStartPosition { get; set; }
         public int life {  get; set; }
         public Color TankColor { get; set; }
+
         public VTank(Bitmap image,int x, int y, int width, int height, int id) : base(x, y, width, height, id)
         {
             CannonAngle = 0;
-            ShotPower = 10f;
+            ShotPower = 5f;
             life = 4;
             Image = image;
             TankColor = id == 1 ? Color.Transparent : Color.Transparent;
@@ -44,6 +45,8 @@ namespace CanyonDuty
 
             Ball = new VPoint((int)initialX, (int)initialY, vx, vy, BoxId);
             Ball.isBullet = true;
+            // Establece UpdatesSinceShot a 0
+            Ball.UpdatesSinceShot = 0;
         }
 
         public override void Render(Graphics g, int width, int height)
@@ -86,6 +89,12 @@ namespace CanyonDuty
             pts[3] = new PointF(d.Pos.X, d.Pos.Y);
 
             BoundingBox();
+            // Comprueba si Ball es null antes de intentar acceder a UpdatesSinceShot
+            if (Ball != null)
+            {
+                // Incrementa UpdatesSinceShot
+                Ball.UpdatesSinceShot++;
+            }
         }
 
         public bool IsUnder(Point point)
@@ -98,6 +107,31 @@ namespace CanyonDuty
             // Si la distancia es menor que el radio del tanque, entonces el punto está dentro del tanque
             return distance <= 25 / 2;
         }
+
+        public bool IsCollidingWithObstacle(VObstacle obstacle)
+        {
+            foreach (var row in obstacle.grid)
+            {
+                foreach (var point in row)
+                {
+                    // Calcula la distancia entre el centro del tanque y el punto
+                    float dx = Position.X - point.X;
+                    float dy = Position.Y - point.Y;
+                    float distance = (float)Math.Sqrt(dx * dx + dy * dy);
+
+                    // Si la distancia es menor que el radio del tanque, entonces el tanque está en colisión con el obstáculo
+                    if (distance <= 25 / 2) // Asegúrate de que este valor sea el correcto
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+
+
 
 
     }
