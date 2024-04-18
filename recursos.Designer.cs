@@ -73,6 +73,46 @@ namespace CanyonDuty {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlueDown {
+            get {
+                object obj = ResourceManager.GetObject("BlueDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlueLeft {
+            get {
+                object obj = ResourceManager.GetObject("BlueLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlueRight {
+            get {
+                object obj = ResourceManager.GetObject("BlueRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlueUp {
+            get {
+                object obj = ResourceManager.GetObject("BlueUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo {
             get {
                 object obj = ResourceManager.GetObject("fondo", resourceCulture);
@@ -103,9 +143,9 @@ namespace CanyonDuty {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tanqueder {
+        internal static System.Drawing.Bitmap RedDown {
             get {
-                object obj = ResourceManager.GetObject("tanqueder", resourceCulture);
+                object obj = ResourceManager.GetObject("RedDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +153,9 @@ namespace CanyonDuty {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tanquedercañon {
+        internal static System.Drawing.Bitmap RedLeft {
             get {
-                object obj = ResourceManager.GetObject("tanquedercañon", resourceCulture);
+                object obj = ResourceManager.GetObject("RedLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +163,9 @@ namespace CanyonDuty {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tanqueizq {
+        internal static System.Drawing.Bitmap RedRight {
             get {
-                object obj = ResourceManager.GetObject("tanqueizq", resourceCulture);
+                object obj = ResourceManager.GetObject("RedRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +173,9 @@ namespace CanyonDuty {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tanqueizqcañon {
+        internal static System.Drawing.Bitmap RedUp {
             get {
-                object obj = ResourceManager.GetObject("tanqueizqcañon", resourceCulture);
+                object obj = ResourceManager.GetObject("RedUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -121,6 +121,18 @@
   <data name="ave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BlueDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BlueDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BlueLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BlueRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\BlueUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,16 +142,16 @@
   <data name="nube" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\nube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tanqueder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\tanqueder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RedDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RedDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tanquedercañon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\tanquedercañon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RedLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RedLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tanqueizq" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\tanqueizq.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RedRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RedRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tanqueizqcañon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\tanqueizqcañon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RedUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RedUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
